@@ -6,7 +6,7 @@
  * @return {string[]} Os nomes dos alunos que fizeram este exercício.
  */
 function nomesDosAlunos() {
-    return [ "João da Silva", "Maria da Silva" ];
+    return [ "xJoão da Silva", "xMaria da Silva" ];
 }
 
 // EXERCÍCIO 1.
@@ -41,7 +41,7 @@ function radianosParaGraus(radianos) {
  * @param {string} de A escala da temperatura especificada pelo parâmetro "valor". Pode ser "K" para Kelvin, "C" para Celsius ou "F" para Fahreinheit.
  * @param {string} para A escala da temperatura a ser retornada. Pode ser "K" para Kelvin, "C" para Celsius ou "F" para Fahreinheit.
  * @return {number} O valor da temperatura correspondente.
- * @throw TypeError Se o valor não for um número finito ou se qualquer uma das escalas for diferente de "C", "F" ou "K".
+ * @throw ConvertError Se o valor não for um número finito ou se qualquer uma das escalas for diferente de "C", "F" ou "K".
  */
 function converterTemperatura(valor, de, para) {
     naoFizIssoAinda();
@@ -68,7 +68,7 @@ function fatorial(n) {
  * memorize resultados já anteriormente computados trás o mesmo resultado em microssegundos.
  *
  * @param {number} n O valor do qual se deseja obter o número de Fibonacci correspondente.
- * @return {bigint} O n-ésimo número de Fibonacci expresso em BigInt.
+ * @return {bigint} n O n-ésimo número de Fibonacci expresso em BigInt.
  * @throw ConvertError Se o parâmetro não for um número inteiro ou for menor que zero.
  */
 function fibonacci(n) {
@@ -80,10 +80,10 @@ function fibonacci(n) {
  * Obtenha o n-ésimo número triangular.
  *
  * @param {n} n O valor do qual se deseja obter o número triangular correspondente.
- * @return {bigint} O n-ésimo número triangular expresso em BigInt.
+ * @return {bigint} n O n-ésimo número triangular expresso em BigInt.
  * @throw ConvertError Se o parâmetro não for um número inteiro ou for menor que zero.
  */
-function triangular(num) {
+function triangular(n) {
     naoFizIssoAinda();
 }
 
