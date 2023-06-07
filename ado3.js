@@ -126,7 +126,7 @@ async function pesquisarCep(cep) {
  * Faça o formulário na tela de pesquisa de CEP. Você o encontra facilmente no HTML.
  *
  * No campo do resultado do CEP, você deve colocar as informações do CEP encontrado
- *(converta a instância de Endereco encontrada em string para fazer isso). Se ocorrer
+ * (converta a instância de Endereco encontrada em string para fazer isso). Se ocorrer
  * algum erro na busca, coloque a mensagem de erro lá também (use o try-catch para isso).
  */
 async function pesquisarCepDOM() {
