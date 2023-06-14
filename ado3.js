@@ -186,12 +186,13 @@ function fibonacci(n) {
  * @throw ConvertError Se o parâmetro não for um número inteiro ou for menor que zero.
  */
 function triangular(n) {
-  if (!Number.isInteger(n) || n < 0) {
-    throw new ConvertError('O parâmetro deve ser um número inteiro não negativo.');
-  }
-
-  return BigInt((n * (n + 1)) / 2);
+	if (typeof n !== 'bigint' || n < 0n) {
+		throw new ConvertError('O parâmetro deve ser um número inteiro não negativo.');
+	} else {
+		return (n * (n + 1n)) / 2n;
+	}
 }
+
 
 
 
@@ -213,8 +214,11 @@ function cepRegex() {
  * @return {RegExp} Uma expressão regular.
  */
 function dddRegex() {
-  return /^(1[1-9]|[2-9]\d)(?!.*\1$)$/g;
+  return /^(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])$/g;
 }
+
+
+
 
 // EXERCÍCIO 9.
 /**
@@ -267,7 +271,7 @@ async function pesquisarCepDOM() {
 
 	try {
 		const endereco = await pesquisarCep(cepInput.value);
-		const enderecoStr = `${endereco.logradouro} - ${endereco.bairro} - ${endereco.localidade} - ${endereco.uf}`;
+		const enderecoStr = `${endereco.logradouro} - ${endereco.bairro} - ${endereco.cidade} - ${endereco.uf}`;
 			resultadoInput.value = enderecoStr;
 	} catch (error) {
 		resultadoInput.value = error.message;
@@ -303,11 +307,8 @@ async function pesquisarPokemon(chave) {
             throw new PokemonNaoEncontradoError('Informações do Pokémon não encontradas.');
         }
 
-        return {
-            name: name,
-            number: number,
-            imageUrl: imageUrl
-        };
+        return new Pokemon (name, number, imageUrl);
+		
     } catch (error) {
         if (error instanceof PokemonNaoEncontradoError) {
             throw error;
@@ -335,9 +336,9 @@ async function pesquisarPokemonDOM() {
 
     try {
         const pokemonData = await pesquisarPokemon(chave);
-        nomeInput.value = pokemonData.name;
-        numeroInput.value = pokemonData.number;
-        fotoImg.src = pokemonData.imageUrl;
+        nomeInput.value = pokemonData.nome;
+        numeroInput.value = pokemonData.numero;
+        fotoImg.src = pokemonData.foto;
     } catch (error) {
         nomeInput.value = error.message;
         fotoImg.src = 'https://cdn-icons-png.flaticon.com/256/4467/4467515.png';
